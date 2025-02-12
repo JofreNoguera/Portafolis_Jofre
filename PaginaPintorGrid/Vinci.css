@@ -1,0 +1,46 @@
+body {
+    background-color: rgba(166, 166, 33, 0.564);
+}
+#titol {
+    background-image: url('imatges/vinci.jpg');
+    height: 230px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+
+
+}
+.text {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border: double;
+}
+.text_titol {
+    color: yellow;
+    background: rgb(168, 48, 48);
+    border:double;
+    height: 60%;
+    width: 30%;
+}
+#menu-principal{
+    background-color: rgb(132, 214, 241);
+    color: blue;
+    border: 2px solid rgb(37, 169, 240);
+    margin: 20px;
+    padding: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 60%;
+}
+.grid img {
+    width: 100%;
+    height: auto;
+    
+}
+.grid img:hover {
+    transform: scale(1.4);
+}
