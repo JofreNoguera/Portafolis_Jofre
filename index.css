@@ -1,0 +1,231 @@
+section {
+  display:flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center; 
+}
+
+.hero{
+  background-color: #f5f6f7;  
+  min-height: 400; 
+  text-align: center; 
+}
+.foto {
+  width: 200px;
+  height: 200px;
+} 
+.navbar-collapse {
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1{
+  font-size: 4.5vw; 
+}
+.hero-imatge-developer{
+  width:200px;
+  height:200px;
+  margin:20px;
+}
+.hero h2{
+  font-size: 2.3vw; 
+  color: #615151; 
+}
+.big-shoulders-uniquifier {
+  font-family: "Big Shoulders", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+.hero-inferior img{
+  width:50%;
+}
+.dark-section{
+  color:white;  
+  background-color: #1b1b32; /*color de fons de la secció fosca*/
+}
+
+
+.about-me{
+  height: 500px;
+  padding:10px;
+}
+
+
+.about-me div{
+  max-width: 600px;
+  text-align:center;
+}
+.section-title{
+  font-size: 2.5vw; /*mida de la font relativa a la pantalla*/
+  font-family:"Vast Shadow"; /*font de la capçalera*/
+  padding: 5px 0; /*espaiat entre la capçalera i el contingut*/    
+}
+.section-text{
+  font-size: 2vw; /*mida de la font relativa a la pantalla*/
+  padding: 15px 0; /*espaiat entre el text i el contingut*/    
+}
+.white-section{
+  color:black;  
+  background-color: white; /*color de fons de la secció clara*/
+}
+.experiencia-title{
+  font-size:2.5vw;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.row i{
+  font-size: 2vw;
+  color: #7ade30;
+  background-color:#0a0a23 ;
+  padding:8px 19px;
+  border-radius: 50%;
+
+
+}
+.row{
+  padding: 40px 40px 60px 40px;
+}
+.columna{
+  margin-bottom: 10px;
+}
+
+
+.badges-contenedor{
+  font-size:1.5vw;
+  font-weight: bold;
+  margin: 10px 0;
+}
+.badge{
+  margin: 5px,
+}
+.row .columna:hover{
+  color:white;
+  background-color: #1b1b32;
+  border: 2px solid #7ade30;
+}
+.row .columna{
+  margin-bottom: 10px;
+  padding: 20px;
+  border: 2px solid #8080804d;
+  transition: all 0.3s ease-in;
+}
+/*Estils generals*/
+.section-title{
+  font-size:clamp(14px,2.5vw,50px); /*defineix el tamany mínim, màxim i òptim de la font*/    
+  font-family:"Vast Shadow"; /*font de la capçalera*/
+  padding: 5px 0; /*espaiat entre la capçalera i el contingut*/    
+}
+.black-text{
+  color: black;
+}
+
+
+/*projectes*/
+.section-description{
+  font-size:clamp(14px,2vw,50px); /*defineix el tamany mínim, màxim i òptim de la font*/    
+  color: #584343;
+}
+.projectes {
+  padding: 40px;
+}
+
+
+.projectes img{
+  height: 100%;
+  width: 100%;
+  padding:10px;
+  border-radius: 10px;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+
+.projectes-container{
+  padding-top: 60px;
+  margin-bottom: 40px;
+}
+
+
+.overlay{
+  transition: all 0.3s ease;
+  opacity: 0;  /*transparència de la capa NO ES VEU*/
+  position: absolute;
+  top:50%;  /*al centre vertical */
+  left: 50%;   /* al centre horitzontal */
+  transform: translate(-50%, -50%);  
+  text-align: center;
+ }
+
+
+ .overlay p{
+  font-size:clamp(14px,2.5vw,30px); /*defineix el tamany mínim, màxim i òptim de la font*/    
+  margin-bottom: 0;
+ }
+
+
+.projecte {
+  position: relative;
+}
+
+
+.projecte:hover img {
+  opacity: 0.2;
+}
+
+
+.projecte:hover .overlay {
+  opacity: 1;
+}
+
+
+.overlay .icones-contenidor {
+  display: flex;
+  flex-direction: column; /*alineat en columnes del contingut*/
+  justify-content: center; /*centrat verticalment*/
+  align-items: center; /*centrat horitzontalment*/  
+}
+
+
+.overlay i {
+  color: black;
+  font-size: 60px;
+  margin: 10px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  /*distribució del menu en dispositius mòbils*/
+ .navbar-brand {
+   display: none;
+ }  
+
+ /*Secció sobre mi*/
+ .about-me{
+   height: 200px;
+ }
+}
+@media screen and (max-width: 768px) {
+  /*distribució del menu en dispositius mòbils*/
+ .navbar-brand {
+   display: none;
+ }  
+
+ /*Secció sobre mi*/
+ .about-me{
+   height: 200px;
+ }
+
+
+ /*tamany del botó */
+ .btn-responive {
+    font-size: 11px; padding: 6px 12px;
+ }
+}
+@media screen and (max-width: 768px) {
+  .navbar-brand {
+    display: none;
+  }    
+}
