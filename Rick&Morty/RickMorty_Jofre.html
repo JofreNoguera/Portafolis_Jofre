@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <title>Rick i Morty - Cercador de Personatges</title>
+  <link rel="stylesheet" href="rickmorty_jofre.css">
+  
+</head>
+<body>
+    <nav class="menu-principal">
+        <a href="../index.html">Portafolis</a>
+        <a href="#columnes">Descripcio</a>
+        <a href="#video">Video 360</a>
+        <a href="#about">Da Vinci</a>
+    </nav><br>
+
+   <div id="titol">
+  <div class="text_titol"><h1>Consultador de Personatjes del Rick & Morty</h1>
+  <h2> Jofre Noguera Rojas</h2></div> </div></div>
+  <input type="text" id="nomInput" placeholder="Introdueix el nom del personatge">
+  <button onclick="buscarpersonatge()">Buscar</button>
+
+  <div id="missatge" class="carregant"></div>
+  <div id="resultat" class="personatge"></div>
+
+  <script>
+  function buscarpersonatge() {
+    const nom = document.getElementById("nomInput").value.trim();
+    const missatge = document.getElementById("missatge");
+    const resultat = document.getElementById("resultat");
+
+    resultat.innerHTML = "";
+    missatge.textContent = "Carregant...";
+
+    const nomCodificat = nom.replaceAll(" ", "%20");
+
+    fetch("https://rickandmortyapi.com/api/character/?name=" + nomCodificat)
+  .then(resposta => {
+    if (resposta.ok) {
+      resposta.json().then(dades => {
+        if (dades.results && dades.results.length > 0) {
+          const personatge = dades.results[0];
+          missatge.textContent = "";
+          resultat.innerHTML = `
+            <img src="${personatge.image}" alt="${personatge.name}">
+            <h2>${personatge.name}</h2>
+            <p><strong>Espècie:</strong> ${personatge.species}</p>
+            <p><strong>Gènere:</strong> ${personatge.gender}</p>
+            <p><strong>Origen:</strong> ${personatge.origin.name}</p>
+          `;
+        } else {
+          missatge.textContent = "";
+          resultat.innerHTML = "<div class='error'>Cap personatge trobat.</div>";
+        }
+      });
+    } else {
+      missatge.textContent = "";
+      resultat.innerHTML = "<div class='error'>Cap personatge trobat.</div>";
+    }
+  });
+  }
+</script>
+
+</body>
+</html>
