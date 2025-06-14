@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WhackA-Mole Jofre</title>
+   <link rel="stylesheet" href="whackamole.css">
+</head>
+<body>
+    <nav class="menu-principal">
+        <a href="../index.html">Portafolis</a>
+        <a href="#columnes">Descripcio</a>
+        <a href="#video">Video 360</a>
+        <a href="#about">Da Vinci</a>
+    </nav><br>
+    <div id="titol">
+  <div class="text_titol"><h1>Whack-A-Mole</h1>
+  <h2> Jofre Noguera Rojas</h2></div> </div></div>
+  <h1>Puntuació: <span id="punts">0</span></h1>
+  <div id="tauler"></div>
+
+  <script>
+    const tauler = document.getElementById("tauler");
+    const puntuacioText = document.getElementById("punts");
+    let puntuacio = 0;
+    let talpIndex = -1;
+
+    // Aqui es pot fer tants forats com vulguem gracies al bucle, pero jo n'he posat 9
+    for (let i = 0; i < 9; i++) {
+      tauler.innerHTML += `<img src="topoNo.jpg" class="forat" onclick="colpejar(${i})">`;
+    }
+
+    function colpejar(index) {
+    new Audio("boing.mp3").play();
+    const forat = tauler.children[index];
+        if (index == talpIndex) {
+        puntuacio += 10;
+        forat.src = "topoPam.jpg";
+        puntuacioText.textContent = puntuacio;
+        } else {
+    forat.src = "topoPam.jpg";
+    }
+    setTimeout(() => {
+        forat.src = (index == talpIndex) ? "topoSi.jpg" : "topoNo.jpg";
+    }, 300);
+    }
+
+
+setInterval(() => {
+  if (talpIndex >= 0) {
+    tauler.children[talpIndex].src = "topoNo.jpg";
+  }
+  talpIndex = Math.floor(Math.random() * 9);
+  tauler.children[talpIndex].src = "topoSi.jpg";
+}, 1000);
+
+  </script>
+</body>
+</html>
